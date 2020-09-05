@@ -1,6 +1,9 @@
 const express = require('express');
-
 const app = express();
+
+const connectDB = require('./config/db');
+
+connectDB();
 
 app.get('/', (req, res) => {
   res.status(200).json({ msg: 'Hey!' });

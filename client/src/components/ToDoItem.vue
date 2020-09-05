@@ -2,7 +2,7 @@
   <div>
     <p class="todo-text"></p>
     <input type="checkbox" name="checkBox" id="checkBox" class="checkbox" />
-    <button type="submit" class="todo-delete"></button>
+    <button type="click" class="todo-delete">X</button>
   </div>
 </template>
 

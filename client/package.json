@@ -28,5 +28,6 @@
     "prettier": "^1.19.1",
     "tailwindcss": "^1.7.6",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
