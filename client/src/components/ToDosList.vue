@@ -1,12 +1,19 @@
 <template>
   <div>
-    <div class="todoitem"></div>
+    <ToDoItem />
+    <ToDoItem />
+    <ToDoItem />
   </div>
 </template>
 
 <script>
+import ToDoItem from "@/components/ToDoItem.vue";
+
 export default {
-  name: "ToDosList"
+  name: "ToDosList",
+  components: {
+    ToDoItem
+  }
 };
 </script>
 
