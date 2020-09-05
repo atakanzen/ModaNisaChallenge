@@ -13,10 +13,10 @@ afterEach(() => {
   wrapper.destroy();
 });
 
-describe('ToDos List', () => {
-  it('renders todo item', () => {
+describe('Renders ToDos List', () => {
+  it('Renders ToDo Items', () => {
     const todoItems = wrapper.findAll('.todoitem');
 
-    expect(todoItems.length).toBeGreaterThanOrEqual(0);
+    expect(todoItems.exists()).toBe(true);
   });
 });
