@@ -1,11 +1,17 @@
 <template>
-  <div></div>
+  <div>
+    <AddToDo />
+  </div>
 </template>
 
 <script>
+import AddToDo from "@/components/AddToDo.vue";
+
 export default {
   name: "App",
-  components: {}
+  components: {
+    AddToDo
+  }
 };
 </script>
 

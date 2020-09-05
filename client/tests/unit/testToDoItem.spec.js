@@ -14,18 +14,18 @@ afterEach(() => {
 });
 
 describe('Renders ToDo Item', () => {
+  // Testing ToDo Text
+  it('Has ToDo Text', () => {
+    const toDo = wrapper.find('.todo-text');
+
+    expect(toDo.exists()).toBe(true);
+  });
+
   // Testing ToDo Checkbox
   it('Has ToDo Checkbox', () => {
     const checkbox = wrapper.find('.checkbox');
 
     expect(checkbox.exists()).toBe(true);
-  });
-
-  // Testing ToDo Text
-  it('Has ToDo Data', () => {
-    const toDo = wrapper.find('.todo-text');
-
-    expect(toDo.exists()).toBe(true);
   });
 
   // Testing Delete ToDo Button

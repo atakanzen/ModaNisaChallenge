@@ -14,16 +14,23 @@ afterEach(() => {
 });
 
 describe('Renders Add ToDo Component', () => {
-  // Testing ToDo Text Input
   it('Has TextBox Input', () => {
     const input = wrapper.find('.text-input');
 
     expect(input.exists()).toBe(true);
   });
-  // Testing Add ToDo Button
+
   it('Has Add Button', () => {
     const button = wrapper.find('.add-button');
 
     expect(button.exists()).toBe(true);
+  });
+
+  it('Calls AddToDo Function', () => {
+    const spy = jest.spyOn(wrapper.vm, 'addToDo');
+
+    wrapper.vm.addToDo();
+
+    expect(spy).toHaveBeenCalled();
   });
 });
