@@ -16,7 +16,7 @@ afterEach(() => {
 describe('Renders ToDo Item', () => {
   // Testing ToDo Checkbox
   it('Has ToDo Checkbox', () => {
-    const checkbox = wrapper.find('.todo-checkbox');
+    const checkbox = wrapper.find('.checkbox');
 
     expect(checkbox.exists()).toBe(true);
   });
