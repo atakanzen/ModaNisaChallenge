@@ -25,5 +25,4 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# Tailwind config
-tailwind.config.js
+
