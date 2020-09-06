@@ -15,13 +15,13 @@ afterEach(() => {
 
 describe('Renders Add ToDo Component', () => {
   it('Has TextBox Input', () => {
-    const input = wrapper.find('.text-input');
+    const input = wrapper.find('input');
 
     expect(input.exists()).toBe(true);
   });
 
   it('Has Add Button', () => {
-    const button = wrapper.find('.add-button');
+    const button = wrapper.find('button');
 
     expect(button.exists()).toBe(true);
   });

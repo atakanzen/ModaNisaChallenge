@@ -7,7 +7,7 @@
           <input
             id="toDo"
             v-model="toDoText"
-            class="form-input block w-full h-full rounded-none rounded-l-md pl-10 transition ease-in-out duration-150 sm:text-l sm:leading-5"
+            class="form-input block w-full h-full rounded-none rounded-l-md pl-5 transition ease-in-out duration-150 sm:text-l sm:leading-5"
             placeholder="Buy Milk."
           />
         </div>

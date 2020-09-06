@@ -1,13 +1,7 @@
-const express = require('express');
-const app = express();
-
-const connectDB = require('./config/db');
+const app = require('./app');
+const { connectDB } = require('./config/db');
 
 connectDB();
-
-app.get('/', (req, res) => {
-  res.status(200).json({ msg: 'Hey!' });
-});
 
 const PORT = process.env.PORT || 5000;
 
