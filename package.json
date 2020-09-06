@@ -13,8 +13,10 @@
   "author": "Atakan Zengin",
   "license": "ISC",
   "devDependencies": {
+    "colors": "^1.4.0",
     "concurrently": "^5.3.0",
     "mongodb-memory-server": "^6.6.7",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
   },
   "dependencies": {

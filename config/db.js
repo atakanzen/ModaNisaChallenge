@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const { MongoMemoryServer } = require('mongodb-memory-server');
+var colors = require('colors');
 
 const mongoURI = config.get('mongoURI');
 
@@ -16,12 +17,12 @@ const connectDB = async () => {
     let mongoServer = new MongoMemoryServer();
     const mockURI = await mongoServer.getUri();
     await mongoose.connect(mockURI, options);
-    console.log('MockDb Connected.');
+    console.log('MockDb Connected.'.yellow.bold);
   } else {
     try {
       await mongoose.connect(mongoURI, options);
 
-      console.log('MongoDb Connected.');
+      console.log('MongoDb Connected.'.blue.bold);
     } catch (err) {
       console.error(err.message);
       process.exit(1);
