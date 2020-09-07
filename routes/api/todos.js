@@ -51,8 +51,8 @@ router.get('/', async (req, res) => {
   try {
     const toDos = await ToDo.find();
     toDos.length > 0
-      ? res.json(toDos)
-      : res.send({ msg: 'There is no toDos yet.' });
+      ? res.status(200).json(toDos)
+      : res.status(200).send({ msg: 'There is no toDos yet.' });
   } catch (err) {
     console.log(err);
     res.status(500).send('Server Error.');

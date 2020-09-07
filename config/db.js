@@ -15,6 +15,7 @@ const options = {
 let mockDb = new MongoMemoryServer();
 
 const connectDB = async () => {
+  // Mocking Database if environment is 'test'
   if (process.env.NODE_ENV === 'test') {
     try {
       const mockURI = await mockDb.getUri();
@@ -39,6 +40,7 @@ const connectDB = async () => {
 };
 
 const disconnectDB = async () => {
+  // Mocking Database if environment is 'test'
   if (process.env.NODE_ENV === 'test') {
     mockDb.stop();
     console.log('MockDB Disconnected'.red.bold);

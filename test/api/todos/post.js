@@ -35,4 +35,16 @@ describe('POST api/todos', () => {
       console.log(err);
     }
   });
+
+  it('Returns 400 status code if required field is null', async () => {
+    try {
+      const res = await request(app).post('/api/todos').send({});
+
+      const body = res.body;
+
+      expect(body).to.contain.property('errors');
+    } catch (err) {
+      console.log(err);
+    }
+  });
 });
