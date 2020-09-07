@@ -4,7 +4,7 @@ const request = require('supertest');
 const app = require('../../../app');
 const { connectDB, disconnectDB } = require('../../../config/db');
 
-describe('POST api/todos', () => {
+describe('POST /api/todos', () => {
   before(async () => {
     try {
       await connectDB();

@@ -8,7 +8,7 @@
     "server": "nodemon server",
     "client": "npm run serve --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "NODE_ENV=test mocha --recursive --parallel --exit --timeout 60000"
+    "test": "NODE_ENV=test mocha --recursive --parallel --exit --timeout 6s"
   },
   "author": "Atakan Zengin",
   "license": "ISC",

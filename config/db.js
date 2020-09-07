@@ -21,8 +21,6 @@ const connectDB = async () => {
       const mockURI = await mockDb.getUri();
 
       await mongoose.connect(mockURI, options);
-
-      console.log('MockDb Connected.'.green.bold);
     } catch (err) {
       console.error(err.message);
     }
@@ -40,16 +38,10 @@ const connectDB = async () => {
 };
 
 const disconnectDB = async () => {
-  // Mocking Database if environment is 'test'
-  if (process.env.NODE_ENV === 'test') {
-    mockDb.stop();
-    console.log('MockDB Disconnected'.red.bold);
-  } else {
-    try {
-      await mongoose.disconnect();
-    } catch (err) {
-      console.error(err.message);
-    }
+  try {
+    await mongoose.disconnect();
+  } catch (err) {
+    console.error(err.message);
   }
 };
 
