@@ -12,12 +12,19 @@ const options = {
   useFindAndModify: false
 };
 
+let mockDb = new MongoMemoryServer();
+
 const connectDB = async () => {
   if (process.env.NODE_ENV === 'test') {
-    let mongoServer = new MongoMemoryServer();
-    const mockURI = await mongoServer.getUri();
-    await mongoose.connect(mockURI, options);
-    console.log('MockDb Connected.'.yellow.bold);
+    try {
+      const mockURI = await mockDb.getUri();
+
+      await mongoose.connect(mockURI, options);
+
+      console.log('MockDb Connected.'.green.bold);
+    } catch (err) {
+      console.error(err.message);
+    }
   } else {
     try {
       await mongoose.connect(mongoURI, options);
@@ -25,13 +32,23 @@ const connectDB = async () => {
       console.log('MongoDb Connected.'.blue.bold);
     } catch (err) {
       console.error(err.message);
+
       process.exit(1);
     }
   }
 };
 
 const disconnectDB = async () => {
-  await mongoose.disconnect();
+  if (process.env.NODE_ENV === 'test') {
+    mockDb.stop();
+    console.log('MockDB Disconnected'.red.bold);
+  } else {
+    try {
+      await mongoose.disconnect();
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
 };
 
 module.exports = { connectDB, disconnectDB };

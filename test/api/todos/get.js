@@ -1,10 +1,9 @@
-const expect = require('chai').expect;
 const request = require('supertest');
 
 const app = require('../../../app');
 const { connectDB, disconnectDB } = require('../../../config/db');
 
-describe('POST api/todos', () => {
+describe('GET api/todos', () => {
   before(async () => {
     try {
       await connectDB();
@@ -21,16 +20,12 @@ describe('POST api/todos', () => {
     }
   });
 
-  it('Adds new toDo', async () => {
+  it('Gets all toDos or an information message in JSON with 200 status code', async () => {
     try {
-      const res = await request(app)
-        .post('/api/todos')
-        .send({ text: 'Test ToDo API' });
-      const body = res.body;
-
-      expect(body).to.contain.property('_id');
-      expect(body).to.contain.property('text');
-      expect(body).to.contain.property('isDone');
+      await request(app)
+        .get('/api/todos')
+        .expect(200)
+        .expect('Content-Type', 'application/json; charset=utf-8');
     } catch (err) {
       console.log(err);
     }
