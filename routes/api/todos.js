@@ -102,7 +102,7 @@ router.put('/:id', async (req, res) => {
       await toDo.save();
     }
 
-    return res.status(200).json(toDo.isDone);
+    return res.status(200).json(toDo);
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error.');
