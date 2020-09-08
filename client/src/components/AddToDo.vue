@@ -12,7 +12,7 @@
           />
         </div>
         <button
-          v-on:click="addToDo"
+          v-on:click="onClick(toDoText)"
           type="click"
           class="-ml-px add-button relative inline-flex items-center px-4 py-2 border border-gray-300 text-l leading-5 font-medium rounded-r-md text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
         >
@@ -24,18 +24,19 @@
 </template>
 
 <script>
+import { addToDo } from "../actions/todos";
+
 export default {
   name: "AddToDo",
+  methods: {
+    async onClick(text) {
+      await addToDo(text);
+    }
+  },
   data() {
     return {
       toDoText: ""
     };
-  },
-  methods: {
-    addToDo() {
-      // POST request to API with input data
-      console.log("Spy me!");
-    }
   }
 };
 </script>
