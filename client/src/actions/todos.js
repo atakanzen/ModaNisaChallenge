@@ -4,10 +4,9 @@ import axios from 'axios';
 export const getToDos = async () => {
   try {
     const res = await axios.get('/api/todos');
-
     return res.data;
   } catch (err) {
-    console.err(err);
+    console.error(err.message);
   }
 };
 

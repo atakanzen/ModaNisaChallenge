@@ -16,9 +16,10 @@
                 />
               </div>
               <button
+                id="addToDo"
                 v-on:click="onAdd(toDoText)"
                 type="click"
-                class="-ml-px add-button relative inline-flex items-center px-4 py-2 border border-gray-300 text-l leading-5 font-medium rounded-r-md text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-l leading-5 font-medium rounded-r-md text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
               >
                 <span class="ml-2">Add</span>
               </button>
@@ -30,6 +31,7 @@
             <div :key="todo._id" v-for="todo in todos">
               <div class="flex items-center justify-between p-2 border-b border-gray-200">
                 <p
+                  id="toDoText"
                   class="todo-text text-lg"
                   v-bind:class="{ 'line-through': todo.isDone }"
                 >{{ todo.text }}</p>
@@ -37,7 +39,7 @@
                   <input
                     type="checkbox"
                     name="checkBox"
-                    id="checkBox"
+                    id="markToDo"
                     class="checkbox bg-gray-300"
                     style="width: 20px; height: 20px"
                     v-bind="{'checked' : todo.isDone}"
@@ -45,6 +47,7 @@
                   />
                   <button
                     type="click"
+                    id="deleteToDo"
                     v-on:click="onDelete(todo._id)"
                     class="todo-delete bg-red-700 rounded-lg p-1 text-white"
                   >
@@ -77,8 +80,6 @@
 </template>
 
  <script>
-// import AddToDo from "@/components/AddToDo.vue";
-// import ToDosList from "@/components/ToDosList.vue";
 import { addToDo, getToDos, markToDo, deleteToDo } from "../actions/todos";
 
 export default {
@@ -107,8 +108,10 @@ export default {
       todos: []
     };
   },
-  async beforeCreate() {
-    this.todos = await getToDos();
+  async created() {
+    if (process.env.NODE_ENV !== "test") {
+      this.todos = await getToDos();
+    }
   }
 };
 </script>
