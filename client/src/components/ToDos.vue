@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="px-4 py-5 sm:p-6">
-          <div v-if="this.todos.length > 0">
+          <div v-if="this.todos.length > 0" class="ToDos">
             <div :key="todo._id" v-for="todo in todos">
               <div class="flex items-center justify-between p-2 border-b border-gray-200">
                 <p
@@ -71,7 +71,7 @@
             </div>
           </div>
           <div v-else>
-            <div class="text-gray-700 leading-4">No ToDos yet, quick add one!</div>
+            <div class="text-gray-500 leading-4">No ToDos yet, quick add one!</div>
           </div>
         </div>
       </div>
