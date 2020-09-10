@@ -1,6 +1,6 @@
-FROM node:latest
+FROM node:lts-alpine 
 
-WORKDIR /usr/src/app
+WORKDIR /server
 
 COPY package*.json ./
 
@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
