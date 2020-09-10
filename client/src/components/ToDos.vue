@@ -3,7 +3,7 @@
     <div class="max-w-3xl h-full flex items-center justify-center mx-auto">
       <div class="bg-white overflow-hidden w-full shadow rounded-lg">
         <div class="border-b border-gray-200 px-4 py-5 sm:px-6">
-          <div class="text-center font-extrabold text-4xl text-blue-800">ToDos</div>
+          <div class="text-center font-extrabold text-4xl text-blue-500">ToDos</div>
           <div>
             <label for="toDo" class="block text-xl font-medium leading-5 text-gray-700">Add ToDos</label>
             <div class="mt-2 flex rounded-md shadow-sm">
@@ -19,7 +19,7 @@
                 id="addToDo"
                 v-on:click="onAdd(toDoText)"
                 type="click"
-                class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-l leading-5 font-medium rounded-r-md text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-l leading-5 font-medium rounded-r-md text-white bg-blue-500 hover:text-gray-200 hover:bg-blue-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300"
               >
                 <span class="ml-2">Add</span>
               </button>
@@ -33,7 +33,7 @@
                 <p
                   id="toDoText"
                   class="todo-text text-lg"
-                  v-bind:class="{ 'line-through': todo.isDone }"
+                  v-bind:class="{ 'line-through': todo.isDone, 'text-gray-400' : todo.isDone }"
                 >{{ todo.text }}</p>
                 <div class="flex items-center justify-center space-x-2">
                   <input
