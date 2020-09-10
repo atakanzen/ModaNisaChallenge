@@ -1,0 +1,15 @@
+version: '3'
+services:
+  client:
+    container_name: todos-client
+    restart: always
+    build: ./client
+    ports:
+      - '80:80'
+    links:
+      - server
+  server:
+    container_name: todos-server
+    build: ./server
+    ports:
+      - '5000:5000'
