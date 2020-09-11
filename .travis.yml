@@ -1,3 +1,8 @@
 language: node_js
 node_js:
   - 12
+  -
+env:
+  - TEST_DIR=client
+  - TEST_DIR=server
+script: cd $TEST_DIR && npm install && npm test
