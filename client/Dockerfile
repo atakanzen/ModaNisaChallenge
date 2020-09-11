@@ -9,10 +9,6 @@ RUN npm install
 
 COPY . .
 
-RUN npm run test:unit 
-
-RUN npm run test:e2e
-
 RUN npm run build
 
 # Production stage
