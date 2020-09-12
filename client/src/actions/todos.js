@@ -3,7 +3,7 @@ import axios from 'axios';
 // GET ToDos
 export const getToDos = async () => {
   try {
-    const res = await axios.get('http://localhost:5000/api/todos');
+    const res = await axios.get('/api/todos');
     return res.data;
   } catch (err) {
     console.error(err.message);
@@ -13,7 +13,7 @@ export const getToDos = async () => {
 // Mark toDo as Done
 export const markToDo = async (id) => {
   try {
-    await axios.put(`http://localhost:5000/api/todos/${id}`);
+    await axios.put(`/api/todos/${id}`);
   } catch (err) {
     console.error(err);
   }
@@ -22,7 +22,7 @@ export const markToDo = async (id) => {
 // Delete toDo
 export const deleteToDo = async (id) => {
   try {
-    await axios.delete(`http://localhost:5000/api/todos/${id}`);
+    await axios.delete(`/api/todos/${id}`);
   } catch (err) {
     console.error(err);
   }
@@ -31,7 +31,7 @@ export const deleteToDo = async (id) => {
 // Add toDo
 export const addToDo = async (text) => {
   try {
-    await axios.post('http://localhost:5000/api/todos', { text });
+    await axios.post('/api/todos', { text });
   } catch (err) {
     console.error(err);
   }
