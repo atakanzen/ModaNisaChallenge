@@ -10,6 +10,7 @@ services:
       - server
   server:
     container_name: todos-server
+    restart: always
     build: ./server
     ports:
       - '5000:5000'
