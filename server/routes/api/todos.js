@@ -3,7 +3,6 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 const ToDo = require('../../models/todo');
-const todo = require('../../models/todo');
 
 // @route   POST api/todos
 // @desc    Add ToDo
