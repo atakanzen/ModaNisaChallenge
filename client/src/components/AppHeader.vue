@@ -23,7 +23,8 @@
       <div class="flex items-center justify-between">
         <div class="flex items-center">
           <a
-            href="#"
+            href="twitter.com/atakanzzengin"
+            target="_blank"
             class="inline-flex items-center justify-center px-4 py-2 text-lg text-white hover:text-gray-200 leading-6 font-medium"
           >Atakan Zengin</a>
         </div>
