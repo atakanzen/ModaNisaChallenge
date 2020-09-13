@@ -13,4 +13,4 @@ services:
     restart: always
     build: ./server
     ports:
-      - '80:5000'
+      - '5000:5000'
