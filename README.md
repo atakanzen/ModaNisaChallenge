@@ -32,7 +32,7 @@ learned a lot of new technologies.
 
 ## Dockerization
 
-* Implemented Dockerfile's both to client and server folders of the application.
+* Implemented Dockerfiles both to client and server folders of the application.
 
 * Using Docker-Compose in the root folder for integration
 
