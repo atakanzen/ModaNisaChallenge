@@ -97,7 +97,7 @@ CMD ["node", "server.js"]
 * **Server Side**
 
   - **Mongo-Memory-Server**: Used for mocking database while test process.
-  - **MOCHA & CHAI & SUPERTEST**: Used for testing API endpoints
+  - **Mocha & Chai & Supertesst**: Used for testing API endpoints
   
   Usage:
   ```
@@ -112,7 +112,7 @@ CMD ["node", "server.js"]
   
 ## Developing
 
-You can simply enter a development environment by running these commands in the root.
+You can simply enter to a development environment by running these commands in the root.
 
 ```
 cd server/
