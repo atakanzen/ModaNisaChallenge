@@ -115,11 +115,16 @@ CMD ["node", "server.js"]
 You can simply enter to a development environment by running these commands in the root.
 
 ```
+ cd client && npm install
+ cd server && npm install
+```
+
+```
 cd server/
 
 npm run dev
 ```
-Implemented `concurrently`for running both the client and the server on local.
+Implemented `concurrently` for running both the client and the server on local.
 
 ## Deployment & DevOps
 
